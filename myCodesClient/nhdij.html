@@ -1,0 +1,480 @@
+{% extends 'charts/chart_base.html' %}
+
+{% load static %}
+
+{% block title %}داشبورد{% endblock %}
+
+{% block header %}
+{% comment %} BlackFriday {% endcomment %}
+{% comment %}
+<link rel="stylesheet" href="{% static 'assets/css/plugins/flipclock.css' %}"> {% endcomment %}
+{% endblock %}
+
+
+
+{% block container %}
+
+
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ Main Content ] start -->
+        <div class="row">
+            {% if referral_cod %}
+            <div class="alert alert alert-primary alert-dismissible fade show" role="alert" align='right'>
+                <p id="p1" hidden>{{referral_cod}}</p>
+                <p><strong> کسب درآمد از بلاکچین بلورین :</strong>
+                    با معرفی بلاکچین بلورین به دوستان خود در اولین خرید <span style="color: red;"> 20٪ </span> مبلغ خرید
+                    آنها را دریافت کنید. </p>
+                <p>لینک معرفی شما :
+                    <button class="btn" onclick="copyToClipboard('#p1')"
+                        style="padding: 0; padding-right: 10px; margin-left: 0px;"><i aria-hidden="true"
+                            class="feather icon-copy f-20"></i></button>
+                    <span>{{referral_cod}}</span>
+                </p>
+            </div>
+            {% endif %}
+
+
+            <div class="col-lg-7 col-md-12">
+                <!-- support-section start -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="/charts/BTC/v1/metrics/addresses/min_1k_count/" style="color: inherit;">
+                            <div class="card support-bar overflow-hidden">
+                                <div class="card-body pb-0">
+                                    <h2 class="m-0">۲۱۵۲</h2>
+                                    <span class="text-c-yellow">تعداد نهنگ‌های بیت‌‌کوین</span>
+                                    <p class="mb-3 mt-3">تعداد کیف پول‌ها با موجودی بیش از ۱۰۰۰ بیت‌کوین</p>
+                                </div>
+                                <div id="support-chart">
+                                </div>
+                                <div class="card-footer bg-warning text-white">
+                                    <div class="row text-center">
+                                        <div class="col" style="border-left: none">
+                                            <h4 class="m-0 text-white"><img
+                                                    src="{% static 'assets/images/coins/btc-white.png' %}"
+                                                    style="width: 32px; margin-bottom: 5px; padding-top: 2px;"></h4>
+                                            <span>BTC</span>
+                                        </div>
+                                        <div class="col" style="border-left: none; padding-top: 5px;">
+                                            <h4 class="m-0 text-white">۲-</h4>
+                                            <span>تغییرات</span>
+                                        </div>
+                                        <div class="col" style="border-left: none">
+                                            <h4 class="m-0 text-white"><i
+                                                    class="feather icon-trending-down text-white f-26"></i></h4>
+                                            <span>روند کلی</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="/charts/ETH/v1/metrics/addresses/min_1k_count/" style="color: inherit;">
+                            <div class="card support-bar overflow-hidden">
+                                <div class="card-body pb-0">
+                                    <h2 class="m-0">۶۲۹۰</h2>
+                                    <span class="text-c-blue">تعداد نهنگ‌های اتریوم</span>
+                                    <p class="mb-3 mt-3">تعداد کیف پول‌ها با موجودی بیش از ۱۰۰۰ اتریوم</p>
+                                </div>
+                                <div id="support-chart1">
+                                </div>
+                                <div class="card-footer bg-primary text-white">
+                                    <div class="row text-center">
+                                        <div class="col" style="border-left: none">
+                                            <h4 class="m-0 text-white"><img
+                                                    src="{% static 'assets/images/coins/eth-white.png' %}"
+                                                    style="width: 32px; margin-bottom: 5px; padding-top: 2px;"></h4>
+                                            <span>ETH</span>
+                                        </div>
+                                        <div class="col" style="border-left: none; padding-top: 5px;">
+                                            <h4 class="m-0 text-white">۰+</h4>
+                                            <span>تغییرات</span>
+                                        </div>
+                                        <div class="col" style="border-left: none">
+                                            <h4 class="m-0 text-white"><i
+                                                    class="feather icon-trending-down text-white f-26"></i></h4>
+                                            <span>روند کلی</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- support-section end -->
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <!-- page statustic card start -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a href="/charts/BTC/v1/metrics/indicators/unrealized_profit/" style="color: inherit;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-8">
+                                            <h4 class="text-c-yellow">٪۸۰</h4>
+                                            <h6 class="text-muted m-b-0">افراد در سود</h6>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <i class="fas fa-money-bill-wave f-28"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-c-yellow">
+                                    <div class="row align-items-center">
+                                        <div class="col-9">
+                                            <p class="text-white m-b-0">٪۱-</p>
+                                        </div>
+                                        <div class="col-3 text-right">
+                                            <i class="feather icon-trending-up text-white f-16"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="/charts/BTC/v1/metrics/distribution/balance_exchanges/" style="color: inherit;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-8">
+                                            <h4 class="text-c-green">۲۵۶۰۵۹۸‌</h4>
+                                            <h6 class="text-muted m-b-0">موجودی صرافی‌</h6>
+                                        </div>
+                                        <div class="col-4 text-right" style="font-size: 32px">
+                                            <i class="fas fa-coins"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-c-green">
+                                    <div class="row align-items-center">
+                                        <div class="col-9">
+                                            <p class="text-white m-b-0">٪۰.۷+</p>
+                                        </div>
+                                        <div class="col-3 text-right">
+                                            <i class="feather icon-trending-up text-white f-16"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <h4 class="text-c-red">۰.۹</h4>
+                                        <h6 class="text-muted m-b-0">قدرت خریدار</h6>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <i class="fas fa-balance-scale f-28"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-c-red">
+                                <div class="row align-items-center">
+                                    <div class="col-9">
+                                        <p class="text-white m-b-0">٪۰+</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <i class="feather icon-trending-down text-white f-16"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-8">
+                                        <h4 class="text-c-blue">٪۵۲</h4>
+                                        <h6 class="text-muted m-b-0">احتمال رشد بازار</h6>
+                                    </div>
+                                    <div class="col-4 text-right" style="font-size: 32px">
+                                        <i class="fas fa-dice"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-c-blue">
+                                <div class="row align-items-center">
+                                    <div class="col-9">
+                                        <p class="text-white m-b-0">٪۴-</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <i class="feather icon-trending-down text-white f-16"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="card table-card latest-activity-card">
+                    <div class="card-header">
+                        <h5>قیمت و بازار</h5>
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle has-ripple" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="feather icon-more-horizontal"></i>
+                                    <span class="ripple ripple-animate"
+                                        style="height: 20px; width: 20px; animation-duration: 0.689655s; animation-timing-function: linear; background: rgb(136, 136, 136); opacity: 0.4; top: -5.25px; left: 9.01562px;"></span></button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right" style="">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i
+                                                    class="feather icon-maximize"></i> بزرگنمایی</span><span
+                                                style="display:none"><i class="feather icon-minimize"></i>
+                                                بازنشانی</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i
+                                                    class="feather icon-minus"></i> جمع کردن</span><span
+                                                style="display:none"><i class="feather icon-plus"></i>
+                                                بازکردن</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><i
+                                                class="feather icon-refresh-cw"></i> بروزرسانی</a></li>
+                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i>
+                                            حذف</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="dt-responsive table-responsive">
+                            <table id="scr-vrt-dt" class="table table-striped table-bordered nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>نماد</th>
+                                        <th>رمزارز</th>
+                                        <th>قیمت (دلار)</th>
+                                        <th>حجم معاملات (۲۴ساعت)</th>
+                                        <th>تغییرات حجم (۲۴ساعت)</th>
+                                        <th>دامیننس</th>
+                                        <th>تغییرات ۷ روزه</th>
+                                        <th>تغییرات ۳۰ روزه</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/btc.png' %}" alt="بیت‌کوین"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_btc.name }}</td>
+                                        <td>{{ cmc_data_btc.coin_price }}</td>
+                                        <td>{{ cmc_data_btc.volume_24h }}</td>
+                                        <td>{{ cmc_data_btc.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_btc.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_btc.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_btc.percent_change_30d }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/eth.png' %}" alt="اتریم"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_eth.name }}</td>
+                                        <td>{{ cmc_data_eth.coin_price }}</td>
+                                        <td>{{ cmc_data_eth.volume_24h }}</td>
+                                        <td>{{ cmc_data_eth.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_eth.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_eth.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_eth.percent_change_30d }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/bnb.png' %}" alt="بایننس"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_bnb.name }}</td>
+                                        <td>{{ cmc_data_bnb.coin_price }}</td>
+                                        <td>{{ cmc_data_bnb.volume_24h }}</td>
+                                        <td>{{ cmc_data_bnb.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_bnb.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_bnb.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_bnb.percent_change_30d }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/ada.png' %}" alt="آدا"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_ada.name }}</td>
+                                        <td>{{ cmc_data_ada.coin_price }}</td>
+                                        <td>{{ cmc_data_ada.volume_24h }}</td>
+                                        <td>{{ cmc_data_ada.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_ada.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_ada.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_ada.percent_change_30d }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/ltc.png' %}" alt="لایت‌کوین"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_ltc.name }}</td>
+                                        <td>{{ cmc_data_ltc.coin_price }}</td>
+                                        <td>{{ cmc_data_ltc.volume_24h }}</td>
+                                        <td>{{ cmc_data_ltc.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_ltc.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_ltc.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_ltc.percent_change_30d }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/shib.png' %}" alt="شیبا"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_shib.name }}</td>
+                                        <td>{{ cmc_data_shib.coin_price }}</td>
+                                        <td>{{ cmc_data_shib.volume_24h }}</td>
+                                        <td>{{ cmc_data_shib.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_shib.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_shib.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_shib.percent_change_30d }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="{% static 'assets/images/coins/doge.png' %}" alt="دوج‌کوین"
+                                                class="img-fluid" style="width: 40px;"></td>
+                                        <td>{{ cmc_data_doge.name }}</td>
+                                        <td>{{ cmc_data_doge.coin_price }}</td>
+                                        <td>{{ cmc_data_doge.volume_24h }}</td>
+                                        <td>{{ cmc_data_doge.volume_change_24h }}%</td>
+                                        <td>{{ cmc_data_doge.market_cap_dominance }}%</td>
+                                        <td>{{ cmc_data_doge.percent_change_7d }}%</td>
+                                        <td>{{ cmc_data_doge.percent_change_30d }}%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <a href="/charts/BTC/v1/metrics/indicators/reserve_risk/" style="color: inherit;">
+                    <div class="card user-card2">
+                        <div class="card-body text-center">
+                            <h6 class="m-b-15">ریسک بازار</h6>
+                            <div class="risk-rate">
+                                <span><b>۵۰</b></span>
+                            </div>
+                            <h6 class="m-b-10 m-t-10">پرریسک</h6>
+                            <p class="text-c-blue b-b-primary">مشاهده نمودار</p>
+                            <div class="row justify-content-center m-t-10 b-t-default m-l-0 m-r-0">
+                                <div class="col m-t-15 b-r-default">
+                                    <h6 class="text-muted">مبنا</h6>
+                                    <h6>بیت‌کوین</h6>
+                                </div>
+                                <div class="col m-t-15">
+                                    <h6 class="text-muted">بروزرسانی</h6>
+                                    <h6>۵ دی</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'assets/js/vendor-all.min.js' %}"></script>
+{% comment %}
+<script src="{% static 'assets/js/plugins/bootstrap.min.js' %}"></script> {% endcomment %}
+{% comment %}
+<script src="{% static 'assets/js/ripple.js' %}"></script> {% endcomment %}
+<!-- <script src="{% static 'assets/js/pcoded.min.js' %}"></script> -->
+<!-- <script src="{% static 'assets/js/menu-setting.min.js' %}"></script> -->
+<!-- Apex Chart -->
+<script src="{% static 'assets/js/plugins/apexcharts.min.js' %}"></script>
+
+<!-- custom-chart js -->
+<script src="{% static 'assets/js/pages/dashboard-main.js' %}"></script>
+
+{% comment %}
+<script>
+    $(document).ready(function () {
+        checkCookie();
+    });
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function checkCookie() {
+        var ticks = getCookie("modelopen");
+        if (ticks != "") {
+            ticks++;
+            setCookie("modelopen", ticks, 1);
+            if (ticks == "2" || ticks == "1" || ticks == "0") {
+                $('#exampleModalCenter').modal();
+            }
+        } else {
+            // user = prompt("Please enter your name:", "");
+            $('#exampleModalCenter').modal();
+            ticks = 1;
+            setCookie("modelopen", ticks, 1);
+        }
+    }
+</script> {% endcomment %}
+
+<script>
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+</script>
+
+
+{% comment %} BlackFriday {% endcomment %}
+{% comment %}
+<script src="{% static 'assets/js/plugins/flipclock.min.js' %}"></script>
+<script>
+    // [ flipclock ] start
+    $(function () {
+        var d = new Date('December 24, 2021 23:59:59');
+        // d.setMonth(d.getMonth() + 2);
+        var el = document.querySelector('.clock');
+        var clock = new FlipClock(el, d, {
+            face: 'DayCounter',
+            countdown: true
+        });
+    });
+    // [ flipclock ] end
+    // [ progressbar ] start
+    $(function () {
+        setInterval(function () {
+            $('.active-progress').css('width', '8%');
+            setTimeout(function () {
+                $('.active-progress').css('width', '16.6%');
+            }, 2000);
+            setTimeout(function () {
+                $('.active-progress').css('width', '12%');
+            }, 4000);
+            setTimeout(function () {
+                $('.active-progress').css('width', '0%');
+            }, 5000);
+        }, 5400);
+    });
+        // [ progressbar ] end
+</script> {% endcomment %}
+
+
+{% endblock container %}

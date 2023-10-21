@@ -1,0 +1,3 @@
+D:/SUT/term_1/01 fop/01 project (second phase)/myCodesClient/cmake-build-debug/CMakeFiles/myCodesClient.dir
+D:/SUT/term_1/01 fop/01 project (second phase)/myCodesClient/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/SUT/term_1/01 fop/01 project (second phase)/myCodesClient/cmake-build-debug/CMakeFiles/rebuild_cache.dir
